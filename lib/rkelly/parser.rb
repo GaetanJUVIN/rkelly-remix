@@ -66,9 +66,9 @@ module RKelly
     private
     def on_error(error_token_id, error_value, value_stack)
       if logger
-        logger.error(token_to_str(error_token_id))
-        logger.error("error value: #{error_value}")
-        logger.error("error stack: #{value_stack}")
+        p token_to_str(error_token_id)
+        p "error value: #{error_value}"
+        p "error stack: #{value_stack}"
       end
     end
 

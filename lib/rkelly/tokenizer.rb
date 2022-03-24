@@ -7,8 +7,8 @@ module RKelly
   class Tokenizer
     KEYWORDS = Hash[%w{
       break case catch continue default delete do else finally for function
-      if in instanceof new return switch this throw try typeof var void while
-      with
+      if in of instanceof new return switch this throw try typeof var void while
+      with let
 
       const true false null debugger
     }.map {|kw| [kw, kw.upcase.to_sym] }]
@@ -48,6 +48,8 @@ module RKelly
       '-='  => :MINUSEQUAL,
       '*='  => :MULTEQUAL,
       '/='  => :DIVEQUAL,
+      '...' => :DOTDOTDOT,
+      '=>'  => :ARROW,
     }
 
     # Some keywords can be followed by regular expressions (eg, return and throw).
@@ -173,7 +175,7 @@ module RKelly
       literal_chars = LITERALS.keys.map {|k| k.slice(0,1) }.uniq
       literal_regex = Regexp.new(LITERALS.keys.sort_by { |x|
           x.length
-        }.reverse.map { |x| "#{x.gsub(/([|+*^])/, '\\\\\1')}" }.join('|'))
+        }.reverse.map { |x| "#{x.gsub(/([|+*^.])/, '\\\\\1')}" }.join('|'))
       token(:LITERALS, literal_regex, literal_chars) do |type, value|
         [LITERALS[value], value]
       end

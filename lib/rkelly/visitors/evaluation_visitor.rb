@@ -275,7 +275,7 @@ module RKelly
       end
 
       %w{
-        ArrayNode BitAndNode BitOrNode
+        ArrayNode ArrowFunctionExprNode BitAndNode BitOrNode
         BitXOrNode BracketAccessorNode BreakNode
         CaseBlockNode CaseClauseNode CommaNode ConditionalNode
         ConstStatementNode ContinueNode DeleteNode
@@ -289,7 +289,7 @@ module RKelly
         OpLShiftEqualNode OpMinusEqualNode OpModEqualNode
         OpMultiplyEqualNode OpOrEqualNode OpRShiftEqualNode
         OpURShiftEqualNode OpXOrEqualNode ParameterNode
-        PropertyNode RegexpNode RightShiftNode
+        PropertyNode RegexpNode RestParameterNode RightShiftNode
         SetterPropertyNode StrictEqualNode
         SwitchNode ThrowNode TryNode
         UnsignedRightShiftNode

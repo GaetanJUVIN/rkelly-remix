@@ -245,7 +245,7 @@ class TokenizerTest < Test::Unit::TestCase
   end
 
   %w{
-    implements let private public yield
+    implements private public yield
     interface package protected static
   }.each do |rw|
     define_method(:"test_future_reserved_word_#{rw}_is_identifier") do

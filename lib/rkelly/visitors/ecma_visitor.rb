@@ -85,6 +85,11 @@ module RKelly
       def visit_NullNode(o)
         "null"
       end
+      
+      def visit_ArrowFunctionExprNode(o)
+        "(#{o.arguments.map { |x| x.accept(self) }.join(', ')}) => " +
+          "#{o.function_body.accept(self)}"
+      end
 
       def visit_FunctionDeclNode(o)
         "#{indent}function #{o.value}" + function_params_and_body(o)
@@ -97,6 +102,10 @@ module RKelly
       def visit_FunctionBodyNode(o)
         @indent += 1
         "{\n#{o.value.accept(self)}\n#{@indent -=1; indent}}"
+      end
+      
+      def visit_RestParameterNode(o)
+        "...#{o.value}"
       end
 
       def visit_BreakNode(o)

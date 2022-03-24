@@ -225,6 +225,14 @@ module RKelly
         [:param, o.value]
       end
 
+      def visit_BlockParameterNode(o)
+        [:block_param, o.value]
+      end
+
+      def visit_RestParameterNode(o)
+        [:rest_param, o.value]
+      end
+
       def visit_BreakNode(o)
         [:break, o.value].compact
       end
@@ -340,6 +348,11 @@ module RKelly
       def visit_FunctionDeclNode(o)
         [ :func_decl, *super]
       end
+
+      def visit_ArrowFunctionExprNode(o)
+        [ :arrow_func, *super]
+      end
+
 
       def visit_ArgumentsNode(o)
         [:args, super]
