@@ -1,15 +1,15 @@
 # -*- encoding: utf-8 -*-
-# stub: rkelly-remix 0.0.7.20220315100135 ruby lib
+# stub: rkelly-remix 0.0.7.20220324160505 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "rkelly-remix".freeze
-  s.version = "0.0.7.20220315100135"
+  s.version = "0.0.7.20220324160505"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.metadata = { "homepage_uri" => "https://github.com/nene/rkelly-remix" } if s.respond_to? :metadata=
   s.require_paths = ["lib".freeze]
   s.authors = ["Aaron Patterson".freeze, "Rene Saarsoo".freeze]
-  s.date = "2022-03-15"
+  s.date = "2022-03-24"
   s.description = "RKelly Remix is a fork of the\nRKelly[https://github.com/tenderlove/rkelly] JavaScript parser.".freeze
   s.email = ["aaron.patterson@gmail.com".freeze, "rene.saarsoo@sencha.com".freeze]
   s.extra_rdoc_files = ["CHANGELOG.rdoc".freeze, "Manifest.txt".freeze, "README.rdoc".freeze, "CHANGELOG.rdoc".freeze, "README.rdoc".freeze]
